@@ -1,6 +1,6 @@
-const APILINK = 'https://api.themoviedb.org/3/movie/550?api_key=bbe9a176874705f99a4ce9047e173b11&page=1';
-const IMG_PATH = 'https://image.tmdb.org/t/p/w12806';
-const SEARCHAPI = "https://api.themoviedb.org/3/search/movie&api_key=bbe9a176874705f99a4ce9047e173b11&query=";
+const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=bbe9a176874705f99a4ce9047e173b11&page=1';
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?&api_key=bbe9a176874705f99a4ce9047e173b11&query="';
 
 const main = document.getElementById('section');
 const form = document.getElementById('form');
@@ -34,7 +34,7 @@ function returnMovies(url){
             div_card.appendChild(title);
             div_column.appendChild(div_card);
             div_row.appendChild(div_column);
-            main.appendChild.apply(div_row);
+            main.appendChild(div_row);
 
         });
     });
@@ -42,13 +42,13 @@ function returnMovies(url){
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    main.innerHTML = "";
+    main.innerHTML = '';
 
     const searchItem = search.value;
 
     if(searchItem){
         returnMovies(SEARCHAPI + searchItem);
-        search.value='';
+        search.value="";
     }
 });
 
