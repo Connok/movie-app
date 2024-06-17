@@ -1,6 +1,8 @@
-const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=bbe9a176874705f99a4ce9047e173b11&page=1';
-const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?&api_key=bbe9a176874705f99a4ce9047e173b11&query="';
+const api_key = process.env['API_KEY']
+
+const APILINK = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1';
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280`;
+const SEARCHAPI = `https://api.themoviedb.org/3/search/movie?&api_key=${api_key}&query="`;
 
 const main = document.getElementById('section');
 const form = document.getElementById('form');
